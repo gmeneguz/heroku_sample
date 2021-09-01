@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  return res.send("Versão 1.2");
+  return res.send("Versão 1.3");
 });
 
 app.use(router);
