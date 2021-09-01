@@ -4,6 +4,10 @@ import { router } from "./routes/messages";
 const app = express();
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  return res.send("Versão 1");
+});
+
 app.use(router);
 
 export function startServer() {
