@@ -1,6 +1,11 @@
 import { Sequelize } from "sequelize";
 
-export const sequelize = new Sequelize(process.env.DATABASE_URL);
+const connectionString = process.env.DATABASE_URL;
+if (!connectionString) {
+  throw new Error("DATABASE_URL env var not defined");
+}
+
+export const sequelize = new Sequelize(connectionString);
 
 export async function startDb() {
   try {
